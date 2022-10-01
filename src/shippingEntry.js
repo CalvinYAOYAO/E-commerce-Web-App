@@ -9,8 +9,12 @@ function shippingEntry() {
     let navigate = useNavigate();
 
     const [postal, setPostal] = useState('');
+    const [shippingMethod, setMyShippingMethod] = useState("Regular");
     const [email, setEmail] = useState('');
 
+    const handleOptionChange = (event) => {
+        setMyShippingMethod(event.target.value)
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,12 +31,6 @@ function shippingEntry() {
         navigate('/purchase/paymentEntry', { replace: true });
     }
 
-    const [shippingMethod, setMyShippingMethod] = useState("Regular");
-
-    const handleOptionChange = (event) => {
-        setMyShippingMethod(event.target.value)
-    }
-
     return (
         <div>
             <h1>
@@ -46,7 +44,6 @@ function shippingEntry() {
                             type="text"
                             value={postal}
                             onChange={(e) => setPostal(event.target.value)}
-
                         />
                     </label>
                     <br/>
