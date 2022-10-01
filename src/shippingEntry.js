@@ -14,7 +14,16 @@ function shippingEntry() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`${postal}\n${shippingMethod}\n${email}\n`)
+
+        localStorage.setItem('Postal Address', postal);
+        localStorage.setItem('Shipping Method', shippingMethod);
+        localStorage.setItem('Email', email);
+
+        /*Use these to access data on later screen*/
+        console.log(localStorage.getItem('Postal Address'));
+        console.log(localStorage.getItem('Shipping Method'));
+        console.log(localStorage.getItem('Email'));
+
         navigate('/purchase/paymentEntry', { replace: true });
     }
 
