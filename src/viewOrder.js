@@ -1,9 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import PaymentContext from "./store/payment-context";
+import { useContext } from "react";
 
-function ViewOrder(props) {
+
+const ViewOrder = (props) => {
     const {cartItems} = props;
+    const paymentCtx = useContext(PaymentContext);
+
     let title = "viewOrder page";
 
     let navigate = useNavigate();
@@ -13,6 +18,12 @@ function ViewOrder(props) {
         navigate('/purchase/viewConfirmation', { replace: true });
     }
 
+    var amount = 0;
+
+    for (const product of cartItems) {
+        amount += product.qty * product.price;
+    }
+
     return (
         <div>
             <h1>
@@ -20,7 +31,13 @@ function ViewOrder(props) {
             </h1>
 
             <div>
-                <h3>Items</h3>
+                <button onClick={handleClick}>Place Order</button>
+            </div>
+
+            <div>
+                <h3>
+                    Items
+                </h3>
                 <th>Picture</th>
                 <th>Name</th>
                 <th>Quantity</th>
@@ -40,18 +57,18 @@ function ViewOrder(props) {
 
             <div>
                 <h3>Shipping Info</h3>
-            
+                <h5>Postal Address: {localStorage.getItem('Postal Address')}</h5>
+                <h5>Shipping Method: {localStorage.getItem('Shipping Method')}</h5>
+                <h5>Email: {localStorage.getItem('Email')}</h5>
             </div>
 
             <div>
                 <h3>Payment Info</h3>
-            
+                <h5>Card Number: {paymentCtx.userPaymentInfo.number}</h5>
+                <h5>Amount: {amount}</h5>
             </div>
 
-            <div>
-                <button onClick={handleClick}>Place Order</button>
             
-            </div>
         </div>
         
 
