@@ -6,7 +6,7 @@ import PaymentContext from "./store/payment-context";
 const PaymentEntry = (props) => {
     const paymentCtx = useContext(PaymentContext);
     const numberRef = useRef();
-    const dateRef = useRef();
+    const monthRef = useRef();
     const codeRef = useRef();
 
     let title = "paymentEntry page";
@@ -16,7 +16,7 @@ const PaymentEntry = (props) => {
         event.preventDefault();
         const paymentInfo = {
             number: numberRef.current.value,
-            date: dateRef.current.value,
+            month: monthRef.current.value,
             code: codeRef.current.value,
         }
         console.log(paymentInfo);
@@ -33,15 +33,15 @@ const PaymentEntry = (props) => {
                 <form onSubmit={submitHandler}>
                     <div>
                         <label htmlFor="cardNumber">Credit Card Number</label>
-                        <input type='text' required id='cardNumber' ref={numberRef}/>
+                        <input type='number' required id='cardNumber' ref={numberRef}/>
                     </div>
                     <div>
-                        <label htmlFor="cardDate">Exparation Date</label>
-                        <input type='text' required id='cardDate'  ref={dateRef}/>
+                        <label htmlFor="cardMonth">Expiration Month</label>
+                        <input type='month' required id='cardMonth' ref={monthRef}/>
                     </div>
                     <div>
                         <label htmlFor="cardCode">Security Code</label>
-                        <input type='text' required id='cardCode'  ref={codeRef}/>
+                        <input type='number' required id='cardCode' ref={codeRef}/>
                     </div>
                     <div>
                         <button>
