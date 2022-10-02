@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
-function shippingEntry() {
+function ShippingEntry() {
     let title = "shippingEntry page";
 
     let navigate = useNavigate();
@@ -42,7 +42,7 @@ function shippingEntry() {
                             name="Postal"
                             type="text"
                             value={postal}
-                            onChange={(e) => setPostal(event.target.value)}
+                            onChange={(e) => setPostal(e.target.value)}
                         />
                     </label>
                     <br/>
@@ -59,7 +59,7 @@ function shippingEntry() {
                             name="Email"
                             type="text"
                             value={email}
-                            onChange={(e) => setEmail(event.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </label>
                     <br/>
@@ -69,4 +69,4 @@ function shippingEntry() {
     )
 };
 
-export default shippingEntry;
+export default ShippingEntry;

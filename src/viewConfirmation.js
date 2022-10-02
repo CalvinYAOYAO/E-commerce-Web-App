@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const viewConfirmation = () => {
+const ViewConfirmation = () => {
     let navigate = useNavigate();
     let title = "Confirmation Page";
     
@@ -29,4 +29,4 @@ const viewConfirmation = () => {
     );
 }
 
-export default viewConfirmation;
+export default ViewConfirmation;
