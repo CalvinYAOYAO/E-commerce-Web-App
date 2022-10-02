@@ -71,7 +71,7 @@ function App() {
               <Route path='/' element={<Navigate replace to="/purchase" />} />
               <Route path='/purchase/paymentEntry' element={<PaymentEntry />} />
               <Route path='/purchase/shippingEntry' element={<ShippingEntry />} />
-              <Route path='/purchase/viewOrder' element={<ViewOrder />} />
+              <Route path='/purchase/viewOrder' element={<ViewOrder cartItems = {cartItems}/>} />
               <Route path='/purchase/viewConfirmation' element={<ViewConfirmation />} />
             </Routes>
           </div>
