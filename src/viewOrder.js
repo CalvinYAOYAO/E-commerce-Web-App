@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
-function viewOrder(props) {
+function ViewOrder(props) {
     const {cartItems} = props;
     let title = "viewOrder page";
 
@@ -58,4 +58,4 @@ function viewOrder(props) {
     );
 }
 
-export default viewOrder;
+export default ViewOrder;
