@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
 
 function shippingEntry() {
     let title = "shippingEntry page";
