@@ -8,7 +8,7 @@ const Cart = (props) => {
   let navigate = useNavigate();
 
     async function handleContinue(event) {
-        navigate('/purchase/viewConfirmation', { replace: true });
+        navigate('/purchase/shippingEntry', { replace: true });
     }
 
   return (
