@@ -31,7 +31,7 @@ const ViewOrder = (props) => {
             </h1>
 
             <div>
-                <button onClick={handleClick}>Place Order</button>
+                <button class="btn btn-secondary" onClick={handleClick}>Place Order</button>
             </div>
 
             <div>

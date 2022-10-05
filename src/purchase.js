@@ -38,7 +38,7 @@ const purchase = (props) => {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select></td>
-                        <th> <button onClick={() => onAddToCart(product)} >Add to cart</button></th>
+                        <th> <button type="button" class="btn btn-secondary" onClick={() => onAddToCart(product)} >Add to cart</button></th>
                     </tr>
                 );
 

@@ -34,7 +34,7 @@ const Cart = (props) => {
         })}
 
 
-      <button onClick={handleContinue}>
+      <button type="button" class="btn btn-secondary" onClick={handleContinue}>
         Continue
       </button>
     </div>
