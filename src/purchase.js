@@ -1,7 +1,4 @@
-import React, {useState} from "react";
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-//import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './custom.css';
 
 const purchase = (props) => {
@@ -34,7 +31,7 @@ const purchase = (props) => {
                             <td><img class={"img-thumbnail"} src={product.image} alt={product.name} width="100" ></img></td>
                             <td class={"text-start"}>{product.name}</td>
                             <td class={"text-start"}> {product.description}</td>
-                            <td class={"text-start"}>{product.price}</td>
+                            <td class={"text-start"}>${product.price}</td>
                             <td><select class={"selectwidthauto form-select"} name={"Quantity" + product.id}
                                         id={"Quantity" + product.id}
                                         onChange={event => onQuantityChanged(product.id, event.target.value)}

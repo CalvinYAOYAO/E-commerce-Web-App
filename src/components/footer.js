@@ -10,56 +10,54 @@ const SampleFooter = () => (
   autoFocus
   columns={[
     {
-      title: 'contact us',
+      title: 'Contact Us',
       items: [
         {
-          title: 'adress',
-          url: 'https://ceo/',
-          openExternal: true,
+          title: 'Address: 1254 Johnson Street, Columbus, OH 43210',
         },
         {
-          title: 'email',
-          url: 'https://ceo/',
-          openExternal: true,
+          title: 'Email: support@pineapple.com',
         },
         {
-          title: 'phone',
-          url: 'https://ceo/',
-          openExternal: true,
+          title: 'Phone: +1 (614)-128-9812',
         },
       ],
     },
     {
-      icon: (
-        <img
-          src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg"
-          alt="more products"
-        />
-      ),
-      title: 'more info',
+      title: 'Follow us',
       items: [
         {
           icon: (
             <img
-              src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg"
-              alt="yuque"
+              src="https://cdn-icons-png.flaticon.com/512/1409/1409946.png"
+              alt=""
             />
           ),
-          title: 'cse5234',
-          url: 'https://com',
-          description: 'cse5234',
+          title: 'Instagram',
+          url: 'https://www.instagram.com/',
+          openExternal: true,
+        },
+        {
+          icon: (
+              <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                  alt=""
+                  width="50"
+              />
+          ),
+          title: 'Facebook',
+          url: 'https://www.facebook.com/',
           openExternal: true,
         },
         {
           icon: (
             <img
-              src="https://gw.alipayobjects.com/zos/rmsportal/uHocHZfNWZOdsRUonZNr.png"
-              alt="yuque"
+              src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+              alt=""
             />
           ),
-          title: 'cse5234',
-          url: 'https://com',
-          description: 'cse5234',
+          title: 'Twitter',
+          url: 'https://twitter.com',
           openExternal: true,
         },
       ],
