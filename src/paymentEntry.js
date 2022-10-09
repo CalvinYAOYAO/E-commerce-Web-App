@@ -2,6 +2,7 @@ import React from "react";
 import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PaymentContext from "./store/payment-context";
+import classes from "./paymentEntry.module.css";
 
 const PaymentEntry = (props) => {
     const paymentCtx = useContext(PaymentContext);
@@ -28,28 +29,29 @@ const PaymentEntry = (props) => {
 
     return (
         <div>
-            <h1>
+            <h3>
                 {title}
+            </h3>
+                <div className={classes.center}>
                 <form onSubmit={submitHandler}>
-                    <div>
-                        <label htmlFor="cardNumber">Credit Card Number</label>
-                        <input type='number' required id='cardNumber' ref={numberRef}/>
+                    <div class="mb-3" >
+                        <label class="form-label" htmlFor="cardNumber">Credit Card Number</label>
+                        <input class="form-control" type='number' required id='cardNumber' ref={numberRef}/>
                     </div>
-                    <div>
-                        <label htmlFor="cardMonth">Expiration Month</label>
-                        <input type='month' required id='cardMonth' ref={monthRef}/>
+                    <div class="mb-3">
+                        <label class="form-label" htmlFor="cardMonth">Expiration Month</label>
+                        <input class="form-control" type='month' required id='cardMonth' ref={monthRef}/>
                     </div>
-                    <div>
-                        <label htmlFor="cardCode">Security Code</label>
-                        <input type='number' required id='cardCode' ref={codeRef}/>
+                    <div class="mb-3">
+                        <label class="form-label" htmlFor="cardCode">Security Code</label>
+                        <input class="form-control" type='number' required id='cardCode' ref={codeRef}/>
                     </div>
                     <div>
                         <button class="btn btn-secondary">
                             Add Payment 
                         </button>
                     </div>
-                </form>
-            </h1>
+                </form></div>
         </div>
     );
 }
