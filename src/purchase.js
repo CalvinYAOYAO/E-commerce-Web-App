@@ -2,8 +2,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './custom.css';
 import StepsBar from "./components/StepsBar";
 
-const purchase = (props) => {
-    const {products, onAddToCart, onQuantityChanged, productQuantities} = props; // this is an array of products from the data.js file
+import {useNavigate} from "react-router-dom";
+
+const Purchase = (props) => {
+    const {cartItems, products, onAddToCart, onQuantityChanged, productQuantities} = props; // this is an array of products from the data.js file
+    
+    let navigate = useNavigate();
+
+    async function handleContinue(event) {
+        navigate('/cart', {replace: true});
+    }
+    
     return (
         <div>
             <StepsBar curStep = {0}/>
@@ -56,9 +65,14 @@ const purchase = (props) => {
                 </tbody>
 
             </table>
+
+            <button disabled={cartItems.length === 0} type="button" className="btn btn-primary" onClick={handleContinue}>
+                Continue
+            </button>
+
         </div>
 
     );
 }
 
-export default purchase;
+export default Purchase;

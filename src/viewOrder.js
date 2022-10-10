@@ -87,7 +87,7 @@ const ViewOrder = (props) => {
             
 
             <div style={{marginTop: '50px'}}>
-                <button class="btn btn-secondary" onClick={handleClick}>Place Order</button>
+                <button class="btn btn-primary" onClick={handleClick}>Place Order</button>
             </div>
         </div>
         

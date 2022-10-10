@@ -23,7 +23,7 @@ const ViewConfirmation = () => {
             <h1 class = "smallIntro">Your Confirmation Number is:</h1>
             <h2 class = "confirm">{randomString}</h2>
             <br></br>
-            <button class="btn btn-secondary" onClick={handleContinue}>
+            <button class="btn btn-primary" onClick={handleContinue}>
                 Continue
             </button>
         </div>

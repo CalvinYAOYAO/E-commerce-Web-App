@@ -8,8 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 const steps = [
   'Purchase',
   'Cart',
-  'Payment Info',
   'Shipping Info',
+  'Payment Info',
   'Check Out',
   'Finished'
 ];

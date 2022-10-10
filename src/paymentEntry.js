@@ -49,7 +49,7 @@ const PaymentEntry = (props) => {
                         <input class="form-control" type='number' required id='cardCode' ref={codeRef}/>
                     </div>
                     <div>
-                        <button class="btn btn-secondary">
+                        <button class="btn btn-primary">
                             Add Payment 
                         </button>
                     </div>
