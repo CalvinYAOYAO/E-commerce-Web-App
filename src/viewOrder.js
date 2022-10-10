@@ -5,6 +5,10 @@ import PaymentContext from "./store/payment-context";
 import { useContext } from "react";
 import StepsBar from "./components/StepsBar";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import "./viewOrder.css";
+
 
 const ViewOrder = (props) => {
     const {cartItems} = props;
@@ -26,51 +30,66 @@ const ViewOrder = (props) => {
     }
 
     return (
+        
         <div>
             <StepsBar curStep = {4}/>
+
             <h1>
-                {title}
+                View Order
             </h1>
 
-            <div>
-                <button class="btn btn-secondary" onClick={handleClick}>Place Order</button>
-            </div>
+            
+            <table className="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cartItems.map( (product) => {
+                        return (
+                            <tr key={product.id}>
+                                <td> <img src={product.image} alt={product.name} width="50"
+                                        height="50"></img> </td>
+                                <td>{product.name}</td>
+                                <td>{product.qty}</td>
+                                <td>{product.qty * product.price}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
 
-            <div>
-                <h3>
-                    Items
-                </h3>
-                <th>Picture</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                {cartItems.map( (product) => {
-                    return (
-                        <tr key={product.id}>
-                            <td> <img src={product.image} alt={product.name} width="50"
-                                    height="50"></img> </td>
-                            <td>{product.name}</td>
-                            <td>{product.qty}</td>
-                            <td>{product.qty * product.price}</td>
-                        </tr>
-                    );
-                })}
-            </div>
-
-            <div>
-                <h3>Shipping Info</h3>
-                <h5>Postal Address: {localStorage.getItem('Postal Address')}</h5>
-                <h5>Shipping Method: {localStorage.getItem('Shipping Method')}</h5>
-                <h5>Email: {localStorage.getItem('Email')}</h5>
-            </div>
-
-            <div>
-                <h3>Payment Info</h3>
-                <h5>Card Number: {paymentCtx.userPaymentInfo.number}</h5>
-                <h5>Amount: {amount}</h5>
+            <div class="card-group">
+                <div class="card" >
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h5 class="card-title">Shipment Info</h5>
+                        </div>
+                        <p class="card-text">Address: {localStorage.getItem('Postal Address')}</p>
+                        <p class="card-text">Shipping Method: {localStorage.getItem('Shipping Method')}</p>
+                        <p class="card-text">Email: {localStorage.getItem('Email')}</p>
+                    </div>
+                </div>
+                <div class="card" >
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h5 class="card-title">Payment Info</h5>
+                        </div>
+                        <p class="card-text">Card Number: {paymentCtx.userPaymentInfo.number}</p>
+                        <p class="card-text">Amount: {amount}</p>
+                    </div>
+                </div>
             </div>
 
             
+
+            <div style={{marginTop: '50px'}}>
+                <button class="btn btn-secondary" onClick={handleClick}>Place Order</button>
+            </div>
         </div>
         
 
