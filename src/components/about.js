@@ -19,8 +19,8 @@ const About = () => {
     <div class="card-body">
       <h3 class="card-title">Jacob Slivka</h3>
       <h5 class="card-title">CEO</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <p class="card-text">Jacob is the CEO of the company meaning he is the highest-ranking executive of the firm and overseas key business decisions. He has extensive experience working with several other companies which makes him a perfect fit for this role.</p>
+      <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
     </div>
   </div>
   <div class="card">
