@@ -7,7 +7,6 @@ import StepsBar from "./components/StepsBar";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import "./viewOrder.css";
 
 
 const ViewOrder = (props) => {
