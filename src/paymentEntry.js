@@ -11,7 +11,7 @@ const PaymentEntry = (props) => {
     const monthRef = useRef();
     const codeRef = useRef();
 
-    let title = "paymentEntry page";
+    let title = "Payment Information";
     let navigate = useNavigate();
 
     const submitHandler = (event) => {
