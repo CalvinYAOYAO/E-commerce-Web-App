@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import './shippingEntry.css';
+import StepsBar from "./components/StepsBar";
 
 function ShippingEntry() {
     let title = "Shipping Information";
@@ -33,6 +34,7 @@ function ShippingEntry() {
 
     return (
         <div>
+            <StepsBar curStep = {2}/>
             <h1>
                 {title}
             </h1>

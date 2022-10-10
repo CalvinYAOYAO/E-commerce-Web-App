@@ -1,6 +1,7 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
+import StepsBar from "./StepsBar";
 
 
 const Cart = (props) => {
@@ -18,6 +19,7 @@ const Cart = (props) => {
 
     return (
         <div>
+            <StepsBar curStep = {1}/>
             <h2>
                 Shopping Cart
             </h2>

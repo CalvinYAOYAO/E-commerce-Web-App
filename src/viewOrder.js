@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import PaymentContext from "./store/payment-context";
 import { useContext } from "react";
+import StepsBar from "./components/StepsBar";
 
 
 const ViewOrder = (props) => {
@@ -26,6 +27,7 @@ const ViewOrder = (props) => {
 
     return (
         <div>
+            <StepsBar curStep = {4}/>
             <h1>
                 {title}
             </h1>

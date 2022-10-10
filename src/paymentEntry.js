@@ -3,6 +3,7 @@ import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PaymentContext from "./store/payment-context";
 import classes from "./paymentEntry.module.css";
+import StepsBar from "./components/StepsBar";
 
 const PaymentEntry = (props) => {
     const paymentCtx = useContext(PaymentContext);
@@ -29,6 +30,7 @@ const PaymentEntry = (props) => {
 
     return (
         <div>
+            <StepsBar curStep = {3}/>
             <h3>
                 {title}
             </h3>

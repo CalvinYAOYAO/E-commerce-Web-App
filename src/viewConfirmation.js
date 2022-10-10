@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './viewConfirmation.css';
+import StepsBar from "./components/StepsBar";
 
 const ViewConfirmation = () => {
     let navigate = useNavigate();
@@ -18,6 +19,7 @@ const ViewConfirmation = () => {
 
     return (
         <div>
+            <StepsBar curStep = {5}/>
             <h1 class = "smallIntro">Your Confirmation Number is:</h1>
             <h2 class = "confirm">{randomString}</h2>
             <br></br>
