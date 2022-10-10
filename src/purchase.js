@@ -1,10 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './custom.css';
+import StepsBar from "./components/StepsBar";
 
 const purchase = (props) => {
     const {products, onAddToCart, onQuantityChanged, productQuantities} = props; // this is an array of products from the data.js file
     return (
         <div>
+            <StepsBar curStep = {0}/>
+
             <h2>
                 Available Products
             </h2>
