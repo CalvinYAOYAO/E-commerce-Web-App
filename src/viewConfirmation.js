@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './viewConfirmation.css';
 
 const ViewConfirmation = () => {
     let navigate = useNavigate();
@@ -17,11 +18,9 @@ const ViewConfirmation = () => {
 
     return (
         <div>
-            <h1>
-                {title}
-            </h1>
-            <center><th> Your Confirmation Number is: {randomString}</th></center>
-
+            <h1 class = "smallIntro">Your Confirmation Number is:</h1>
+            <h2 class = "confirm">{randomString}</h2>
+            <br></br>
             <button class="btn btn-secondary" onClick={handleContinue}>
                 Continue
             </button>

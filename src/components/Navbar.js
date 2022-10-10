@@ -10,8 +10,8 @@ function NavBar() {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo">
-            CSE5234
+          <NavLink exact to="/home" className="nav-logo">
+                      PineApple <sup>©</sup>
             <i className="fas fa-code"></i>
           </NavLink>
 
@@ -57,7 +57,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Shopping Cart
+                Cart
               </NavLink>
             </li>
           </ul>

@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import './shippingEntry.css';
 
 function ShippingEntry() {
-    let title = "shippingEntry page";
+    let title = "Shipping Information";
 
     let navigate = useNavigate();
 
@@ -35,8 +36,9 @@ function ShippingEntry() {
             <h1>
                 {title}
             </h1>
+                <br></br>
                 <form onSubmit={handleSubmit}>
-                    <label>Enter your postal address:
+                <label class="inputPrompt">Enter your postal address:&nbsp;&nbsp;
                         <input
                             id="Postal"
                             name="Postal"
@@ -45,15 +47,17 @@ function ShippingEntry() {
                             onChange={(e) => setPostal(e.target.value)}
                         />
                     </label>
-                    <br/>
-                    <label>Select shipping method:
+                <br />
+                <br></br>
+                <label class="inputPrompt">Select shipping method:&nbsp;&nbsp;
                         <select value={shippingMethod} onChange={handleOptionChange}>
                             <option value="Regular">Regular</option>
                             <option value="Expedited">Expedited</option>
                         </select>
                     </label>
-                    <br/>
-                    <label>Enter your email:
+                <br />
+                <br></br>
+                <label class="inputPrompt">Enter your email:&nbsp;&nbsp;
                         <input
                             id="Email"
                             name="Email"
@@ -62,7 +66,8 @@ function ShippingEntry() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </label>
-                    <br/>
+                <br />
+                <br></br>
                     <input type="submit" />
                 </form>
         </div>
