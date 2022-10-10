@@ -5,7 +5,7 @@ import StepsBar from "./components/StepsBar";
 import {useNavigate} from "react-router-dom";
 
 const Purchase = (props) => {
-    const {cartItems, products, onAddToCart, onQuantityChanged, productQuantities} = props; // this is an array of products from the data.js file
+    const {products, onAddToCart, onQuantityChanged, productQuantities} = props; // this is an array of products from the data.js file
     
     let navigate = useNavigate();
 
@@ -66,7 +66,7 @@ const Purchase = (props) => {
 
             </table>
 
-            <button disabled={cartItems.length === 0} type="button" className="btn btn-primary" onClick={handleContinue}>
+            <button type="button" className="btn btn-primary" onClick={handleContinue}>
                 Continue
             </button>
 

@@ -20,7 +20,7 @@ const steps = [
 function StepsBar(props) {
     return (
         <div>
-            <Box sx={{ width: '100%' }}>
+            <Box sx={{ width: '100%', margin: '40px' }}>
                 <Stepper activeStep={props.curStep} alternativeLabel>
                     {steps.map((label) => (
                         <Step key={label}>

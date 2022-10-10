@@ -5,7 +5,7 @@ import StepsBar from "./components/StepsBar";
 
 const ViewConfirmation = () => {
     let navigate = useNavigate();
-    let title = "Confirmation Page";
+    // let title = "Confirmation Page";
     
 
     async function handleContinue(event) {
@@ -24,7 +24,7 @@ const ViewConfirmation = () => {
             <h2 class = "confirm">{randomString}</h2>
             <br></br>
             <button class="btn btn-primary" onClick={handleContinue}>
-                Continue
+                Done
             </button>
         </div>
     );
