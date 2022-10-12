@@ -56,24 +56,24 @@ function ShippingEntry() {
                     <div class="mb-3" >
 
                         <label class="inputPrompt form-label">Select shipping method:&nbsp;&nbsp;
-                            <select class="form-select" value={shippingMethod} onChange={handleOptionChange}>
-                                <option value="Regular">Regular</option>
-                                <option value="Expedited">Expedited</option>
-                            </select>
                         </label>
+                        <select class="form-select" value={shippingMethod} onChange={handleOptionChange}>
+                            <option value="Regular">Regular</option>
+                            <option value="Expedited">Expedited</option>
+                        </select>
                     </div>
 
                     <div class="mb-3" >
                         <label class="inputPrompt form-label">Enter your email:&nbsp;&nbsp;
-                            <input class="form-control"
-                                id="Email"
-                                name="Email"
-                                type="email"
-                                required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
                         </label>
+                        <input class="form-control"
+                            id="Email"
+                            name="Email"
+                            type="email"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
                     </div>
                     <div>
                         <button class="btn btn-primary">
