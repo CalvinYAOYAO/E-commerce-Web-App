@@ -14,6 +14,7 @@ import Home from './components/home';
 import About from './components/about';
 import Cart from './components/cart';
 import data from "./data";
+import { Toast } from 'bootstrap';
 
 
 function App() {
@@ -49,6 +50,9 @@ function App() {
 
     setCartItems(cartItems)
 
+    const toastLiveExample = document.getElementById('liveToast')
+    const toast = new Toast(toastLiveExample)
+    toast.show()
   }
 
   const onQuantityChanged = (productId, qty) => {
