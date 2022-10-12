@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import './shippingEntry.css';
+import classes from "./shippingEntry.module.css";
 import StepsBar from "./components/StepsBar";
 
 function ShippingEntry() {
@@ -34,44 +34,54 @@ function ShippingEntry() {
 
     return (
         <div>
-            <StepsBar curStep = {2}/>
-            <h1>
+            <StepsBar curStep={2} />
+            <h3>
                 {title}
-            </h1>
-                <br></br>
+            </h3>
+            <div className={classes.center}>
                 <form onSubmit={handleSubmit}>
-                <label class="inputPrompt">Enter your postal address:&nbsp;&nbsp;
-                        <input
+                    <div class="mb-3" >
+                        <label class="inputPrompt form-label">Enter your postal address:&nbsp;&nbsp;
+                        </label>
+                        <input class="form-control"
                             id="Postal"
                             name="Postal"
                             type="text"
+                            required
                             value={postal}
                             onChange={(e) => setPostal(e.target.value)}
                         />
-                    </label>
-                <br />
-                <br></br>
-                <label class="inputPrompt">Select shipping method:&nbsp;&nbsp;
-                        <select value={shippingMethod} onChange={handleOptionChange}>
-                            <option value="Regular">Regular</option>
-                            <option value="Expedited">Expedited</option>
-                        </select>
-                    </label>
-                <br />
-                <br></br>
-                <label class="inputPrompt">Enter your email:&nbsp;&nbsp;
-                        <input
-                            id="Email"
-                            name="Email"
-                            type="text"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </label>
-                <br />
-                <br></br>
-                    <input type="submit" />
+                    </div>
+
+                    <div class="mb-3" >
+
+                        <label class="inputPrompt form-label">Select shipping method:&nbsp;&nbsp;
+                            <select class="form-select" value={shippingMethod} onChange={handleOptionChange}>
+                                <option value="Regular">Regular</option>
+                                <option value="Expedited">Expedited</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="mb-3" >
+                        <label class="inputPrompt form-label">Enter your email:&nbsp;&nbsp;
+                            <input class="form-control"
+                                id="Email"
+                                name="Email"
+                                type="email"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
                 </form>
+            </div>
         </div>
     )
 };
