@@ -49,10 +49,6 @@ function App() {
     }
 
     setCartItems(cartItems)
-
-    const toastLiveExample = document.getElementById('liveToast')
-    const toast = new Toast(toastLiveExample)
-    toast.show()
   }
 
   const onQuantityChanged = (productId, qty) => {

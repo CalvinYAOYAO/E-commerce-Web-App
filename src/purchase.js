@@ -55,7 +55,7 @@ const Purchase = (props) => {
                                 <option value="5">5</option>
                             </select></td>
                             <th>
-                                <button class={"btn btn-primary"} onClick={() => onAddToCart(product)}>Add to cart
+                                <button class={"btn btn-primary"} data-bs-toggle="modal" data-bs-target="#confirmModal" onClick={() => onAddToCart(product)}>Add to cart
                                 </button>
                             </th>
                         </tr>
@@ -70,18 +70,22 @@ const Purchase = (props) => {
                 Continue
             </button>
 
-            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                    <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#007aff"></rect></svg>
-                    <strong class="me-auto">PineApple Bot</strong>
-                    <small>just now</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                    A new phone has been added to your cart.
-                    </div>
+            <div class="modal fade" id="confirmModal" tabIndex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="confirmModalLabel">Added to cart</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    A new phone has been added to the cart, view cart & checkout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick={handleContinue}>Checkout</button>
+                </div>
+                </div>
+            </div>
             </div>
 
         </div>
