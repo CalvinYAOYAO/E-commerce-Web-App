@@ -14,9 +14,12 @@ const Purchase = (props) => {
         navigate('/cart', {replace: true});
     }
 
-    fetch("https://57bg18w306.execute-api.us-east-2.amazonaws.com/v1/inventory/")
-        .then( response => response.json() )
-        .then( data => setProducts(data.inventory) )
+    // https://stackoverflow.com/a/66622201
+    useEffect(()=> {
+        fetch("https://57bg18w306.execute-api.us-east-2.amazonaws.com/v1/inventory/")
+            .then( response => response.json() )
+            .then( data => setProducts(data.inventory) )
+    }, [])
 
     return (
         <div>
