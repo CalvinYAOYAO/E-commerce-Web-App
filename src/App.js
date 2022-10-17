@@ -18,7 +18,7 @@ import { Toast } from 'bootstrap';
 
 
 function App() {
-  const { products } = data;
+
   //set cart items is a function to change the value of cart items
   //cart items is an array with all the items in the cart
   const [cartItems, setCartItems] = useState([])
@@ -67,7 +67,7 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/cart' element={<Cart cartItems = {cartItems}/>} />
 
-              <Route path='/purchase' element={<Purchase onAddToCart={onAddToCart} onQuantityChanged={onQuantityChanged} products={products} productQuantities={productQuantities}/>} />
+              <Route path='/purchase' element={<Purchase onAddToCart={onAddToCart} onQuantityChanged={onQuantityChanged} productQuantities={productQuantities}/>} />
               <Route path='/' element={<Navigate replace to="/purchase" />} />
               <Route path='/purchase/paymentEntry' element={<PaymentEntry />} />
               <Route path='/purchase/shippingEntry' element={<ShippingEntry />} />
