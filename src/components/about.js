@@ -28,7 +28,7 @@ const About = () => {
     <div class="card-body">
       <h3 class="card-title">Yongyao Huang</h3>
       <h5 class="card-title">CFO</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">Yongyao Huang is the chief financial officer for PineApple. In this role, he is responsible for overseeing all aspects of global finance and strategic planning, as well as audit, procurement and financial services.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>

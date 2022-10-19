@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PaymentContext from "./store/payment-context";
 import { useContext } from "react";
 import StepsBar from "./components/StepsBar";
+import axios from "axios";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,10 +18,34 @@ const ViewOrder = (props) => {
 
     let navigate = useNavigate();
 
+    var itemList = [];
+    cartItems.map((product) => {
+        var item = {};
+        item.id = product.id;
+        item.quantity = product.qty;
+        itemList.push(item);
+    });
+
+    var data;
+
+    // get orderProcessing info from microservice
+    useEffect(()=> {
+        axios.post("https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/formal/orderprocessing", {
+          Item: itemList
+        }).then(res => {data = res.data})
+      }, []);
+
+
     const handleClick = (event) => {
         event.preventDefault();
-        navigate('/purchase/viewConfirmation', { replace: true });
+        if (data.isValid) {
+            // use useNavigate and useLocation hooks to pass props to confirm page
+            navigate('/purchase/viewConfirmation', { state: { confirmNum: data.confirmNum }, replace: true });
+        }else {
+            alert("We don't have enough stockings. Please modify your quantity.");
+        }
     }
+
 
     var amount = 0;
 

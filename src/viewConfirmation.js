@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import './viewConfirmation.css';
 import StepsBar from "./components/StepsBar";
 import { Toast } from 'bootstrap';
@@ -9,16 +9,14 @@ import { useEffect, useState } from 'react';
 const ViewConfirmation = () => {
     let navigate = useNavigate();
     // let title = "Confirmation Page";
-    
+
+    const location = useLocation();
 
     async function handleContinue(event) {
         navigate('/purchase', { replace: true });
     }
 
-    let randomString = (Math.random() + 1).toString(36).substring(2);
-    randomString = randomString.toUpperCase();
-
-    localStorage.setItem('Confirmation', randomString);
+    localStorage.setItem('Confirmation', location.state.confirmNum);
 
     const [playAnimation, setPlayAnimation] = useState(false);
 
@@ -46,7 +44,7 @@ const ViewConfirmation = () => {
         <div>
             <StepsBar curStep = {5}/>
             <h1 class = "smallIntro">Your Confirmation Number is:</h1>
-            <h2 class = "confirm">{randomString}</h2>
+            <h2 class = "confirm">{location.state.confirmNum}</h2>
             <br></br>
             <button class="btn btn-primary" onClick={handleContinue}>
                 Done
