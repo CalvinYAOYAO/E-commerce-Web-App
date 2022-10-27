@@ -6,7 +6,6 @@ import './footer.css'
 const SampleFooter = () => ( 
   
   <Footer  className='footer'
-  onClick
   autoFocus
   columns={[
     {

@@ -10,17 +10,17 @@ function NavBar() {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <NavLink exact to="/home" className="nav-logo">
-                      PineApple <sup>©</sup>
+          <NavLink exact="true" to="/home" className="nav-logo">
+                      PineApple <sup>ï¿½</sup>
             <i className="fas fa-code"></i>
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
-                exact
+                exact="true"
                 to="/home"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -29,9 +29,9 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                exact
+                exact="true"
                 to="/about"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -40,9 +40,9 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                exact
+                exact="true"
                 to="/purchase"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -51,9 +51,9 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                exact
+                exact="true"
                 to="/cart"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >

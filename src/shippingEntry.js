@@ -40,10 +40,10 @@ function ShippingEntry() {
             </h3>
             <div className={classes.center}>
                 <form onSubmit={handleSubmit}>
-                    <div class="mb-3" >
-                        <label class="inputPrompt form-label">Enter your postal address:&nbsp;&nbsp;
+                    <div className="mb-3" >
+                        <label className="inputPrompt form-label">Enter your postal address:&nbsp;&nbsp;
                         </label>
-                        <input class="form-control"
+                        <input className="form-control"
                             id="Postal"
                             name="Postal"
                             type="text"
@@ -53,20 +53,20 @@ function ShippingEntry() {
                         />
                     </div>
 
-                    <div class="mb-3" >
+                    <div className="mb-3" >
 
-                        <label class="inputPrompt form-label">Select shipping method:&nbsp;&nbsp;
+                        <label className="inputPrompt form-label">Select shipping method:&nbsp;&nbsp;
                         </label>
-                        <select class="form-select" value={shippingMethod} onChange={handleOptionChange}>
+                        <select className="form-select" value={shippingMethod} onChange={handleOptionChange}>
                             <option value="Regular">Regular</option>
                             <option value="Expedited">Expedited</option>
                         </select>
                     </div>
 
-                    <div class="mb-3" >
-                        <label class="inputPrompt form-label">Enter your email:&nbsp;&nbsp;
+                    <div className="mb-3" >
+                        <label className="inputPrompt form-label">Enter your email:&nbsp;&nbsp;
                         </label>
-                        <input class="form-control"
+                        <input className="form-control"
                             id="Email"
                             name="Email"
                             type="email"
@@ -76,7 +76,7 @@ function ShippingEntry() {
                         />
                     </div>
                     <div>
-                        <button class="btn btn-primary">
+                        <button className="btn btn-primary">
                             Submit
                         </button>
                     </div>
