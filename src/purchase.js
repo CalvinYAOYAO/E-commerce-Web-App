@@ -32,7 +32,6 @@ const Purchase = (props) => {
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
-
                     <th>Picture</th>
                     <th class={"text-start"}>Name</th>
                     <th class={"text-start"}>Description</th>
@@ -46,7 +45,7 @@ const Purchase = (props) => {
             product*/}
                 <tbody>
                 {products.map((product) => {
-                    if (product.stock>0) {
+                    if (product.stock > 0) {
                         return (
                             <tr key={product.id}>
                                 <td><img class={"img-thumbnail"} src={product.image} alt={product.name}

@@ -13,24 +13,22 @@ import NavBar from './components/Navbar'
 import Home from './components/home';
 import About from './components/about';
 import Cart from './components/cart';
-import data from "./data";
-import { Toast } from 'bootstrap';
 
 
 function App() {
 
-  //set cart items is a function to change the value of cart items
-  //cart items is an array with all the items in the cart
+  // set cart items is a function to change the value of cart items
+  // cart items is an array with all the items in the cart
   const [cartItems, setCartItems] = useState([])
-  //productQuantities is a dictionary with product id as key and product quantitiy as value
+  // productQuantities is a dictionary with product id as key and product quantitity as value
   // this is used when the user changes the quanitity of the product they would like to buy on the purchase page
   const [productQuantities, setProductQuantities] = useState({})
 
-  //function for when add to cart button is clicked
+  // function for when add to cart button is clicked
   const onAddToCart = (product) => {
     let productInCart = false
     let productQty = 1 //assume productQty is 1 if the product id is not in productQuantities becuase the user
-    //lickley didn't change it from its defult value
+    // likely didn't change it from its defult value
     if (product.id in productQuantities)
     {
       productQty = productQuantities[product.id]

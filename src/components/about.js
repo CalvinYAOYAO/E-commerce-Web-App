@@ -37,7 +37,7 @@ const About = () => {
     <div class="card-body">
       <h3 class="card-title">Andy Yu</h3>
       <h5 class="card-title">CTO</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">Andy Yu is the Chief Technology Officer. He is responsible for creating policies and procedures to enhance products and services. He oversees technology stretegy, ensuring that business objectives are matched by the technical architecture to support it.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
