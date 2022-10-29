@@ -87,24 +87,24 @@ const ViewOrder = (props) => {
                 </tbody>
             </table>
 
-            <div class="card-group">
-                <div class="card" >
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h5 class="card-title">Shipment Info</h5>
+            <div className="card-group">
+                <div className="card" >
+                    <div className="card-body">
+                        <div className="card-header">
+                            <h5 className="card-title">Shipment Info</h5>
                         </div>
-                        <p class="card-text">Address: {localStorage.getItem('Postal Address')}</p>
-                        <p class="card-text">Shipping Method: {localStorage.getItem('Shipping Method')}</p>
-                        <p class="card-text">Email: {localStorage.getItem('Email')}</p>
+                        <p className="card-text">Address: {localStorage.getItem('Postal Address')}</p>
+                        <p className="card-text">Shipping Method: {localStorage.getItem('Shipping Method')}</p>
+                        <p className="card-text">Email: {localStorage.getItem('Email')}</p>
                     </div>
                 </div>
-                <div class="card" >
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h5 class="card-title">Payment Info</h5>
+                <div className="card" >
+                    <div className="card-body">
+                        <div className="card-header">
+                            <h5 className="card-title">Payment Info</h5>
                         </div>
-                        <p class="card-text">Card Number: {paymentCtx.userPaymentInfo.number}</p>
-                        <p class="card-text">Amount: {amount}</p>
+                        <p className="card-text">Card Number: {paymentCtx.userPaymentInfo.number}</p>
+                        <p className="card-text">Amount: {amount}</p>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@ const ViewOrder = (props) => {
             
 
             <div style={{marginTop: '50px'}}>
-                <button class="btn btn-primary" onClick={handleClick}>Place Order</button>
+                <button className="btn btn-primary" onClick={handleClick}>Place Order</button>
             </div>
         </div>
         

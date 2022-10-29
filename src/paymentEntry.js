@@ -36,20 +36,20 @@ const PaymentEntry = (props) => {
             </h3>
                 <div className={classes.center}>
                 <form onSubmit={submitHandler}>
-                    <div class="mb-3" >
-                        <label class="form-label" htmlFor="cardNumber">Credit Card Number</label>
-                        <input class="form-control" type='number' required id='cardNumber' ref={numberRef}/>
+                    <div className="mb-3" >
+                        <label className="form-label" htmlFor="cardNumber">Credit Card Number</label>
+                        <input className="form-control" type='number' required id='cardNumber' ref={numberRef}/>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" htmlFor="cardMonth">Expiration Month</label>
-                        <input class="form-control" type='month' required id='cardMonth' ref={monthRef}/>
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor="cardMonth">Expiration Month</label>
+                        <input className="form-control" type='month' required id='cardMonth' ref={monthRef}/>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" htmlFor="cardCode">Security Code</label>
-                        <input class="form-control" type='number' required id='cardCode' ref={codeRef}/>
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor="cardCode">Security Code</label>
+                        <input className="form-control" type='number' required id='cardCode' ref={codeRef}/>
                     </div>
                     <div>
-                        <button class="btn btn-primary">
+                        <button className="btn btn-primary">
                             Add Payment 
                         </button>
                     </div>

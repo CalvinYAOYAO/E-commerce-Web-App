@@ -37,7 +37,7 @@ const Cart = (props) => {
                 {cartItems.map((product) => {
                     return (
                         <tr key={product.id}>
-                            <td><img class={"img-thumbnail"} src={product.image} alt={product.name} width="50"></img></td>
+                            <td><img className={"img-thumbnail"} src={product.image} alt={product.name} width="50"></img></td>
                             <td>{product.name}</td>
                             <td>{product.qty}</td>
                             <td>${product.qty * product.price}</td>
@@ -48,7 +48,7 @@ const Cart = (props) => {
                 </tbody>
             </table>
 
-            <p class={"text-end"}>Total Price: ${total} &emsp; &emsp;</p>
+            <p className={"text-end"}>Total Price: ${total} &emsp; &emsp;</p>
 
             <button disabled={cartItems.length === 0} type="button" className="btn btn-primary" onClick={handleContinue}>
                 Continue
