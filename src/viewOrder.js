@@ -25,7 +25,6 @@ const ViewOrder = (props) => {
         quantityList.push(product.qty);
     });
 
-    var stockData;
 
     var orderData = {
         email: localStorage.getItem('Email'),
@@ -38,23 +37,23 @@ const ViewOrder = (props) => {
         quantities: quantityList
     }
 
+    var data;
+
     // get orderProcessing info from microservice
     useEffect(()=> {
         axios.post("https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/formal/orderprocessing", {
-            order: orderData
-        }).then(res => {stockData = res.data})
+          order: orderData
+        }).then(res => {data = res.data})
       }, []);
 
 
     const handleClick = (event) => {
         event.preventDefault();
-        if (stockData.isValid) {
+        if (data.isValid) {
             // use useNavigate and useLocation hooks to pass props to confirm page
             navigate('/purchase/viewConfirmation', { state: { confirmNum: data.confirmNum }, replace: true });
-            console.log(orderData);
-        } else {
-            alert("We are out of stick. Please modify your quantity.");
-            console.log(orderData);
+        }else {
+            alert("We don't have enough stockings. Please modify your quantity.");
         }
     }
 
