@@ -26,23 +26,36 @@ const ViewOrder = (props) => {
         itemList.push(item);
     });
 
-    var data;
+    var stockData;
+
+    var orderData = {
+        "shipping_email": localStorage.getItem('Email'),
+        "shipping_address": localStorage.getItem('Postal Address'),
+        "shipping_method": localStorage.getItem('Shipping Method'),
+        "payment_card_number": paymentCtx.userPaymentInfo.number,
+        "payment_exp": paymentCtx.userPaymentInfo.month,
+        "payment_cvv": paymentCtx.userPaymentInfo.code,
+        "all_items": itemList
+    }
 
     // get orderProcessing info from microservice
     useEffect(()=> {
         axios.post("https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/formal/orderprocessing", {
-          Item: itemList
-        }).then(res => {data = res.data})
+            Item: itemList,
+            Order: orderData
+        }).then(res => {stockData = res.data})
       }, []);
 
 
     const handleClick = (event) => {
         event.preventDefault();
-        if (data.isValid) {
+        if (stockData.isValid) {
             // use useNavigate and useLocation hooks to pass props to confirm page
             navigate('/purchase/viewConfirmation', { state: { confirmNum: data.confirmNum }, replace: true });
+            console.log(orderData);
         } else {
             alert("We are out of stick. Please modify your quantity.");
+            console.log(orderData);
         }
     }
 
