@@ -19,30 +19,29 @@ const ViewOrder = (props) => {
     let navigate = useNavigate();
 
     var itemList = [];
+    var quantityList = [];
     cartItems.map((product) => {
-        var item = {};
-        item.id = product.id;
-        item.quantity = product.qty;
-        itemList.push(item);
+        itemList.push(product.id);
+        quantityList.push(product.qty);
     });
 
     var stockData;
 
     var orderData = {
-        "shipping_email": localStorage.getItem('Email'),
-        "shipping_address": localStorage.getItem('Postal Address'),
-        "shipping_method": localStorage.getItem('Shipping Method'),
-        "payment_card_number": paymentCtx.userPaymentInfo.number,
-        "payment_exp": paymentCtx.userPaymentInfo.month,
-        "payment_cvv": paymentCtx.userPaymentInfo.code,
-        "all_items": itemList
+        email: localStorage.getItem('Email'),
+        address: localStorage.getItem('Postal Address'),
+        shipping_method: localStorage.getItem('Shipping Method'),
+        card_num: paymentCtx.userPaymentInfo.number,
+        exp: paymentCtx.userPaymentInfo.month,
+        cvv: paymentCtx.userPaymentInfo.code,
+        items: itemList,
+        quantities: quantityList
     }
 
     // get orderProcessing info from microservice
     useEffect(()=> {
         axios.post("https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/formal/orderprocessing", {
-            Item: itemList,
-            Order: orderData
+            order: orderData
         }).then(res => {stockData = res.data})
       }, []);
 
