@@ -55,7 +55,7 @@ const Purchase = (props) => {
                                 <td><img className={"img-thumbnail"} src={product.image} alt={product.name}
                                          width="100"></img></td>
                                 <td className={"text-start"}>{product.name}</td>
-                                <td className={"text-start"}> {product.desc}</td>
+                                <td className={"text-start"}> {product.description}</td>
                                 <td className={"text-start"}>${product.price}</td>
                                 <td><select className={"selectwidthauto form-select"} name={"Quantity" + product.id}
                                             id={"Quantity" + product.id}
