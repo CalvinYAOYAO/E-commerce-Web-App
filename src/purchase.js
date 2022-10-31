@@ -22,6 +22,8 @@ const Purchase = (props) => {
             .then( data => setProducts(data.products) )
     }, [])
 
+    console.log(products)
+
     return (
         <div>
             <StepsBar curStep = {0}/>
@@ -47,30 +49,36 @@ const Purchase = (props) => {
             product*/}
                 <tbody>
                 {products.map((product) => {
-                    return (
-                        <tr key={product.id}>
-                            <td><img className={"img-thumbnail"} src={product.image} alt={product.name}
-                                        width="100"></img></td>
-                            <td className={"text-start"}>{product.name}</td>
-                            <td className={"text-start"}> {product.desc}</td>
-                            <td className={"text-start"}>${product.price}</td>
-                            <td><select className={"selectwidthauto form-select"} name={"Quantity" + product.id}
-                                        id={"Quantity" + product.id}
-                                        onChange={event => onQuantityChanged(product.id, event.target.value)}
-                                        defaultValue={product.id in productQuantities ? productQuantities[product.id] : 1}>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select></td>
-                            <th>
-                                <button className={"btn btn-primary"} onClick={() => onAddToCart(product)}>Add
-                                    to cart
-                                </button>
-                            </th>
-                        </tr>
-                    );
+                    if (product.stock>0) {
+                        return (
+                            <tr key={product.id}>
+                                <td><img className={"img-thumbnail"} src={product.image} alt={product.name}
+                                         width="100"></img></td>
+                                <td className={"text-start"}>{product.name}</td>
+                                <td className={"text-start"}> {product.desc}</td>
+                                <td className={"text-start"}>${product.price}</td>
+                                <td><select className={"selectwidthauto form-select"} name={"Quantity" + product.id}
+                                            id={"Quantity" + product.id}
+                                            onChange={event => onQuantityChanged(product.id, event.target.value)}
+                                            defaultValue={product.id in productQuantities ? productQuantities[product.id] : 1}>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                                <th>
+                                    <button className={"btn btn-primary"} onClick={() => onAddToCart(product)}>Add
+                                        to cart
+                                    </button>
+                                </th>
+                            </tr>
+                        );
+                    }
+                    else
+                    {
+                        return ""
+                    }
                 })}
                 </tbody>
 
