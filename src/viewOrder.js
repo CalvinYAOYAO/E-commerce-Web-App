@@ -53,8 +53,8 @@ const ViewOrder = (props) => {
         if (data.isValid) {
             // use useNavigate and useLocation hooks to pass props to confirm page
             navigate('/purchase/viewConfirmation', { state: { confirmNum: data.confirmNum }, replace: true });
-        }else {
-            alert("We don't have enough stockings. Please modify your quantity.");
+        } else {
+            alert("We are out of stock for one of the selected items. Please modify your quantity.");
         }
     }
 
