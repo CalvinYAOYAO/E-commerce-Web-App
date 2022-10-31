@@ -29,6 +29,7 @@ const ViewOrder = (props) => {
     var orderData = {
         email: localStorage.getItem('Email'),
         address: localStorage.getItem('Postal Address'),
+        postal: localStorage.getItem('Zip Code'),
         shipping_method: localStorage.getItem('Shipping Method'),
         card_num: paymentCtx.userPaymentInfo.number,
         exp: paymentCtx.userPaymentInfo.month,

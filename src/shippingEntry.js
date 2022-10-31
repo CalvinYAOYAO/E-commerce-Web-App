@@ -10,6 +10,7 @@ function ShippingEntry() {
     let navigate = useNavigate();
 
     const [postal, setPostal] = useState('');
+    const [zipCode, setZipCode] = useState('');
     const [shippingMethod, setMyShippingMethod] = useState("Regular");
     const [email, setEmail] = useState('');
 
@@ -23,11 +24,13 @@ function ShippingEntry() {
         localStorage.setItem('Postal Address', postal);
         localStorage.setItem('Shipping Method', shippingMethod);
         localStorage.setItem('Email', email);
+        localStorage.setItem('Zip Code', zipCode);
 
         /*Use these to access data on later screen*/
         console.log(localStorage.getItem('Postal Address'));
         console.log(localStorage.getItem('Shipping Method'));
         console.log(localStorage.getItem('Email'));
+        console.log(localStorage.getItem('Zip Code'));
 
         navigate('/purchase/paymentEntry', { replace: true });
     }
@@ -50,6 +53,19 @@ function ShippingEntry() {
                             required
                             value={postal}
                             onChange={(e) => setPostal(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="mb-3" >
+                        <label className="inputPrompt form-label">Enter your zip code:&nbsp;&nbsp;
+                        </label>
+                        <input className="form-control"
+                            id="zip"
+                            name="zip"
+                            type="text"
+                            required
+                            value={zipCode}
+                            onChange={(e) => setZipCode(e.target.value)}
                         />
                     </div>
 
