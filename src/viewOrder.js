@@ -41,21 +41,24 @@ const ViewOrder = (props) => {
     var data;
 
     // get orderProcessing info from microservice
-    useEffect(()=> {
-        axios.post("https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/formal/orderprocessing", {
-          order: orderData
-        }).then(res => {data = res.data})
-      }, []);
+    // useEffect(()=> {
+    //   }, []);
 
 
     const handleClick = (event) => {
         event.preventDefault();
-        if (data.isValid) {
-            // use useNavigate and useLocation hooks to pass props to confirm page
-            navigate('/purchase/viewConfirmation', { state: { confirmNum: data.confirmNum }, replace: true });
-        } else {
-            alert("We are out of stock for one of the selected items. Please modify your quantity.");
-        }
+        axios.post("https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/formal/orderprocessing", {
+          order: orderData
+        }).then(res => {
+            data = res.data
+            console.log(data)
+            if (data.isValid) {
+                // use useNavigate and useLocation hooks to pass props to confirm page
+                navigate('/purchase/viewConfirmation', { state: { confirmNum: data.confirmNum }, replace: true });
+            }else {
+                alert("We don't have enough stockings. Please modify your quantity.");
+            }
+        })
     }
 
 
