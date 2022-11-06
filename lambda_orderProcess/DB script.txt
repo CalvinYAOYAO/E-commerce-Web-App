@@ -7,7 +7,7 @@ default 'New');
 create table CUSTOMER_ORDER_LINE_ITEM (ID int auto_increment primary key, 
 ITEM_NUMBER int, QUANTITY int, CUSTOMER_ORDER_ID_FK int);
 
-create table PAYMENT_INFO (ID int auto_increment primary key, CARD_NUM varchar(255),  EXP_DATE varchar(255), CVV varchar(3));
+create table PAYMENT_INFO (ID int auto_increment primary key, CARD_NUM varchar(255),  EXP_DATE varchar(255), CVV varchar(3), CONFIRMATION_NUM varchar(255));
 
 create table SHIPPING_INFO (ID int auto_increment primary key, ADDRESS varchar(255), 
 SHIPPING_METHOD varchar(255), POSTAL_CODE varchar(255));

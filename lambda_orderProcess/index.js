@@ -25,10 +25,24 @@ exports.handler = async (event) => {
         return true;
     }
 
+    var paymentConfirm_Num;
+
+    // call the API of paymentProcess
+    await axios.post('https://kfqvfmukae.execute-api.us-east-1.amazonaws.com/test/paymentprocessing', {
+        paymentInfo: {
+            card_num: order.card_num,
+            exp: order.exp,
+            cvv: order.cvv
+        }
+    }).then(res => {
+        paymentConfirm_Num = res.data.confirmation_Num;
+    });
+
+    //call the API of inventory
     var responseBody;
     await axios.get('https://57bg18w306.execute-api.us-east-2.amazonaws.com/v1/inventory').then(res => {
         if (checkStock(res.data.inventory, order)) {
-            storeData(order);
+            storeData(order, paymentConfirm_Num);
             responseBody = {
                 isValid: true,
                 message: "Order successfully！",
