@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
     //         {id: 2,
     //         quantity: 2}
     //     ];
-
+    console.log(event);
     var body = JSON.parse(event.body);
     var order = body.order;
     var checkStock = (inventory, order) => {
@@ -70,20 +70,26 @@ exports.handler = async (event, context) => {
         body: JSON.stringify(responseBody)
     };
 
-    console.log("Loading function");
-    var AWS = require("aws-sdk");
+    console.log("Shipping SNS Notification");
+    var AWS = require('aws-sdk');
+    AWS.config.update({region: 'us-east-1'});
+    var params = {
+        Message: "PineApple wants to initiate shipping",
+        TopicArn: "arn:aws:sns:us-east-1:566566672071:Shipping-Topic"
+    };
 
-    // exports.handler = function(event, context) {
-        var eventText = "PineApple wants to initiate shipping";
-        console.log("Received event:", eventText);
-        var sns = new AWS.SNS();
-        var params = {
-            Message: eventText, 
-            Subject: "Test SNS From Lambda",
-            TopicArn: "arn:aws:sns:us-east-1:566566672071:Shipping_Processing_Topic"
-        };
-        sns.publish(params, context.done);
-    // };
+    // Create promise and SNS service object
+    var publishTextPromise = new AWS.SNS({apiVersion: '2010-03-31'}).publish(params).promise();
+
+    // Handle promise's fulfilled/rejected states
+    await publishTextPromise.then(
+        function(data) {
+            console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);
+            console.log("MessageID is " + data.MessageId);
+        }).catch(
+            function(err) {
+            console.error(err, err.stack);
+        });
     
-    return response
+    return response;
 };
