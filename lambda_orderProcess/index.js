@@ -4,7 +4,7 @@ console.log('Loading orderProcessing microservice');
 const axios = require('axios');
 const storeData = require('./storeData');
 
-exports.handler = async (event) => {
+exports.handler = async (event, context) => {
     // var list = [
     //         {id: 1,
     //         quantity: 1},
@@ -69,6 +69,21 @@ exports.handler = async (event) => {
         },
         body: JSON.stringify(responseBody)
     };
+
+    console.log("Loading function");
+    var AWS = require("aws-sdk");
+
+    // exports.handler = function(event, context) {
+        var eventText = "PineApple wants to initiate shipping";
+        console.log("Received event:", eventText);
+        var sns = new AWS.SNS();
+        var params = {
+            Message: eventText, 
+            Subject: "Test SNS From Lambda",
+            TopicArn: "arn:aws:sns:us-east-1:566566672071:Shipping_Processing_Topic"
+        };
+        sns.publish(params, context.done);
+    // };
     
     return response
 };
