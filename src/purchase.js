@@ -68,7 +68,7 @@ const Purchase = (props) => {
                                     <option value="5">5</option>
                                 </select></td>
                                 <th>
-                                    <button className={"btn btn-primary"} onClick={() => onAddToCart(product)}>Add
+                                    <button className={"btn btn-primary"} data-bs-toggle="modal" data-bs-target="#confirmModal" onClick={() => onAddToCart(product)}>Add
                                         to cart
                                     </button>
                                 </th>
@@ -87,6 +87,24 @@ const Purchase = (props) => {
             <button type="button" className="btn btn-primary" onClick={handleContinue}>
                 Continue
             </button>
+
+            <div class="modal fade" id="confirmModal" tabIndex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="confirmModalLabel">Added to cart</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    A new phone has been added to the cart, view cart & checkout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick={handleContinue}>Checkout</button>
+                </div>
+                </div>
+            </div>
+            </div>
 
         </div>
 
