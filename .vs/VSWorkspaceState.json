@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\components"
   ],
-  "SelectedNode": "\\src\\reportWebVitals.js",
+  "SelectedNode": "\\src\\components\\cart.js",
   "PreviewInSolutionExplorer": false
 }
